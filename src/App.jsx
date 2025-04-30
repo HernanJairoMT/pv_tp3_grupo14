@@ -1,19 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import TaskInput from './components/TaskInput';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [tasks, setTasks] = useState([]);
+
+  const handleAddTask = (taskText) => {
+    const newTask = {
+      id: Date.now(),
+      text: taskText,
+      completed: false,
+    };
+    setTasks([...tasks, newTask]);
+  };
 
   return (
-    <>
-      <div>
-      
-      </div>
-     
-    </>
-  )
+    <div>
+      <h1>Lista de Tareas</h1>
+      <TaskInput onAddTask={handleAddTask} />
+
+      <ul>
+        {tasks.map((task) => (
+          <li key={task.id}>{task.text}</li>
+        ))}
+      </ul>
+    </div>
+  );
 }
 
-export default App
+export default App;
