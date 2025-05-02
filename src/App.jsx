@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import TaskInput from './components/TaskInput';
 import TaskList from './components/TaskList';
-
+import './App.css';
 function App() {
   const [tasks, setTasks] = useState([]);
 
@@ -27,14 +27,16 @@ function App() {
   };
 
   return (
-    <div>
-      <h1>Lista de Tareas</h1>
-      <TaskInput onAddTask={handleAddTask} />
-      <TaskList
-        tasks={tasks}
-        onToggleComplete={handleToggleComplete}
-        onDelete={handleDeleteTask}
-      />
+    <div className="container">
+      <div className="todo-box">
+        <h1>Lista de Tareas</h1>
+        <TaskInput onAddTask={handleAddTask} />
+        <TaskList
+          tasks={tasks}
+          onToggleComplete={handleToggleComplete}
+          onDelete={handleDeleteTask}
+        />
+      </div>
     </div>
   );
 }
