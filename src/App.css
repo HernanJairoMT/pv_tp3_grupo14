@@ -79,3 +79,7 @@ body {
   display: flex;
   gap: 20px;
 }
+.task-completed {
+  text-decoration: line-through;
+  color: #ffffff;
+}
