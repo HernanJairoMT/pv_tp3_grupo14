@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import TaskInput from './components/TaskInput';
 import TaskList from './components/TaskList';
+import ProductManager from './components/ProductManager';
 import './App.css';
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -36,8 +37,10 @@ function App() {
           onToggleComplete={handleToggleComplete}
           onDelete={handleDeleteTask}
         />
+       <ProductManager />
       </div>
     </div>
+    
   );
 }
 
